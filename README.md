@@ -1,217 +1,228 @@
-# WN_GraphicsStudy
+# 🎮 이득우의 게임수학 (Lee Deuk-woo's Game Mathematics)
 
-DX12 Reference Viedeos
-https://www.youtube.com/playlist?list=PL-m4pn2uJvXF30Vu2DNK1mKH2EJxOc_jU
+## 1부 | 가상 세계의 구축 (Part 1 | Building the Virtual World)
 
-이득우의 게임수학
-Contents
+---
 
-1장 메타버스를 지탱하는 게임 수학
-1.1메타버스가가져올새로운변화
-1.2게임엔진의구성
-1.3게임수학의구성
-1.4이책의실습환경구축
-1.5정리
+### **1장: 메타버스를 지탱하는 게임 수학 (Chapter 1: Game Mathematics Supporting the Metaverse)**
+- 1.1 메타버스가 가져올 새로운 변화 (New Changes Brought by the Metaverse)
+- 1.2 게임 엔진의 구성 (Composition of a Game Engine)
+- 1.3 게임 수학의 구성 (Composition of Game Mathematics)
+- 1.4 이 책의 실습 환경 구축 (Building the Practice Environment for This Book)
+- 1.5 정리 (Summary)
 
-1부 | 가상 세계의 구축
-2장 수: 가상 세계를 구성하는 가장 작은 단위
-2.1수와집합
-__2.1.1연산과수의구조
-__2.1.2수의구조
-__2.1.3수의표현
-2.2함수
-__2.2.1함수의개념과종류
-__2.2.2합성함수
-__2.2.3항등함수와역함수
-__2.2.4곱집합을활용한좌표평면으로의확장
-2.3정리
+### **2장: 수: 가상 세계를 구성하는 가장 작은 단위 (Chapter 2: Numbers: The Smallest Unit Constituting the Virtual World)**
+- 2.1 수와 집합 (Numbers and Sets)
+    - 2.1.1 연산과 수의 구조 (Operations and the Structure of Numbers)
+    - 2.1.2 수의 구조 (The Structure of Numbers)
+    - 2.1.3 수의 표현 (Representation of Numbers)
+- 2.2 함수 (Functions)
+    - 2.2.1 함수의 개념과 종류 (Concepts and Types of Functions)
+    - 2.2.2 합성함수 (Composite Functions)
+    - 2.2.3 항등함수와 역함수 (Identity Functions and Inverse Functions)
+    - 2.2.4 곱집합을 활용한 좌표평면으로의 확장 (Extension to a Coordinate Plane Using Cartesian Products)
+- 2.3 정리 (Summary)
 
-3장 벡터: 가상 공간의 탄생
-3.1데카르트좌표계
-3.2벡터공간과벡터
-__3.2.1스칼라와벡터
-__3.2.2벡터공간의연산
-__3.2.3벡터의크기와이동
-3.3벡터의결합과생성
-3.4정리
+### **3장: 벡터: 가상 공간의 탄생 (Chapter 3: Vectors: The Birth of Virtual Space)**
+- 3.1 데카르트 좌표계 (Cartesian Coordinate System)
+- 3.2 벡터 공간과 벡터 (Vector Spaces and Vectors)
+    - 3.2.1 스칼라와 벡터 (Scalars and Vectors)
+    - 3.2.2 벡터 공간의 연산 (Operations in Vector Spaces)
+    - 3.2.3 벡터의 크기와 이동 (Magnitude and Translation of Vectors)
+- 3.3 벡터의 결합과 생성 (Combination and Span of Vectors)
+- 3.4 정리 (Summary)
 
-4장 삼각함수: 회전을 위한 수학
-4.1삼각함수
-__4.1.1삼각함수의성질
-__4.1.2각의측정법
-4.2삼각함수를활용한물체의회전
-4.3삼각함수의역함수
-4.4극좌표계
-4.5정리
+### **4장: 삼각함수: 회전을 위한 수학 (Chapter 4: Trigonometric Functions: Mathematics for Rotation)**
+- 4.1 삼각함수 (Trigonometric Functions)
+    - 4.1.1 삼각함수의 성질 (Properties of Trigonometric Functions)
+    - 4.1.2 각의 측정법 (Methods of Angle Measurement)
+- 4.2 삼각함수를 활용한 물체의 회전 (Object Rotation Using Trigonometric Functions)
+- 4.3 삼각함수의 역함수 (Inverse Trigonometric Functions)
+- 4.4 극좌표계 (Polar Coordinate System)
+- 4.5 정리 (Summary)
 
-5장 행렬: 가상 세계의 변환 도구
-5.1선형성:예측가능한비례관계
-__5.1.1선형함수
-__5.1.2벡터공간의선형변환
-5.2행렬
-__5.2.1행렬의기본연산
-__5.2.2행렬의곱셈
-__5.2.3정방행렬의곱셈
-5.3행렬의설계
-__5.3.1크기변환행렬
-__5.3.2회전변환행렬
-__5.3.3전단변환행렬
-__5.3.4삼각함수의덧셈정리
-5.4역행렬
-__5.4.1역행렬의존재를판별하는행렬식
-__5.4.2크기변환행렬의역행렬
-__5.4.3전단변환행렬의역행렬
-__5.4.4회전변환행렬의역행렬
-__5.4.5행렬곱의역행렬
-5.5정리
+### **5장: 행렬: 가상 세계의 변환 도구 (Chapter 5: Matrices: The Transformation Tool of the Virtual World)**
+- 5.1 선형성: 예측 가능한 비례 관계 (Linearity: Predictable Proportional Relationships)
+    - 5.1.1 선형함수 (Linear Functions)
+    - 5.1.2 벡터 공간의 선형 변환 (Linear Transformations in Vector Spaces)
+- 5.2 행렬 (Matrices)
+    - 5.2.1 행렬의 기본 연산 (Basic Matrix Operations)
+    - 5.2.2 행렬의 곱셈 (Matrix Multiplication)
+    - 5.2.3 정방행렬의 곱셈 (Multiplication of Square Matrices)
+- 5.3 행렬의 설계 (Designing Matrices)
+    - 5.3.1 크기 변환 행렬 (Scaling Matrix)
+    - 5.3.2 회전 변환 행렬 (Rotation Matrix)
+    - 5.3.3 전단 변환 행렬 (Shear Matrix)
+    - 5.3.4 삼각함수의 덧셈 정리 (Sum and Difference Formulas for Trigonometric Functions)
+- 5.4 역행렬 (Inverse Matrices)
+    - 5.4.1 역행렬의 존재를 판별하는 행렬식 (Determinant for Determining the Existence of an Inverse Matrix)
+    - 5.4.2 크기 변환 행렬의 역행렬 (Inverse of a Scaling Matrix)
+    - 5.4.3 전단 변환 행렬의 역행렬 (Inverse of a Shear Matrix)
+    - 5.4.4 회전 변환 행렬의 역행렬 (Inverse of a Rotation Matrix)
+    - 5.4.5 행렬곱의 역행렬 (Inverse of a Matrix Product)
+- 5.5 정리 (Summary)
 
-2부 | 콘텐츠 제작 기초
-6장 아핀 공간: 움직이는 가상 세계의 구축
-6.1이동변환을위한아핀공간
-6.2아핀공간의구성요소
-__6.2.1점
-__6.2.2이동벡터
-__6.2.3아핀공간의성질
-6.3아핀결합
-__6.3.1두점의결합
-6.4선그리기알고리즘
-__6.4.1벡터를모니터의점으로표현
-__6.4.2선그리기알고리즘
-__6.4.3라인클리핑알고리즘
-6.5정리
+---
+## 2부 | 콘텐츠 제작 기초 (Part 2 | Fundamentals of Content Creation)
 
-7장 내적: 벡터 공간의 분석과 응용
-7.1벡터의내적
-__7.1.1내적의성질
-__7.1.2내적과삼각함수와의관계
-__7.1.3행렬의곱셈을내적으로표현하기
-7.2시야판별
-__7.2.1앞뒤판별
-__7.2.2시야판별
-7.3조명효과의구현
-7.4투영벡터
-7.5정리
+---
 
-8장 삼각형: 물체를 구성하는 가장 작은 단위
-8.1세점의결합
-8.2메시
-8.3무게중심좌표
-__8.3.1무게중심좌표의계산
-__8.3.2정점에설정된부가정보의활용
-8.4텍스처매핑
-8.5정리
+### **6장: 아핀 공간: 움직이는 가상 세계의 구축 (Chapter 6: Affine Spaces: Building a Moving Virtual World)**
+- 6.1 이동 변환을 위한 아핀 공간 (Affine Spaces for Translation)
+- 6.2 아핀 공간의 구성 요소 (Components of an Affine Space)
+    - 6.2.1 점 (Points)
+    - 6.2.2 이동 벡터 (Displacement Vectors)
+    - 6.2.3 아핀 공간의 성질 (Properties of Affine Spaces)
+- 6.3 아핀 결합 (Affine Combinations)
+    - 6.3.1 두 점의 결합 (Combination of Two Points)
+- 6.4 선 그리기 알고리즘 (Line Drawing Algorithms)
+    - 6.4.1 벡터를 모니터의 점으로 표현 (Representing Vectors as Points on a Monitor)
+    - 6.4.2 선 그리기 알고리즘 (Line Drawing Algorithms)
+    - 6.4.3 라인 클리핑 알고리즘 (Line Clipping Algorithms)
+- 6.5 정리 (Summary)
 
-9장 게임 엔진: 콘텐츠를 만드는 기술
-9.1게임엔진의구성요소
-__9.1.1씬의구조
-__9.1.2모델링행렬의설계
-__9.1.3로컬공간과로컬축
-__9.1.4리소스관리
-9.2게임엔진의워크플로우
-__9.2.1CK소프트렌더러의워크플로우
-__9.2.2렌더링파이프라인
-9.3카메라시스템
-__9.3.1가상공간의카메라
-9.4정리
+### **7장: 내적: 벡터 공간의 분석과 응용 (Chapter 7: Dot Product: Analysis and Application of Vector Spaces)**
+- 7.1 벡터의 내적 (Dot Product of Vectors)
+    - 7.1.1 내적의 성질 (Properties of the Dot Product)
+    - 7.1.2 내적과 삼각함수와의 관계 (Relationship between the Dot Product and Trigonometric Functions)
+    - 7.1.3 행렬의 곱셈을 내적으로 표현하기 (Expressing Matrix Multiplication with the Dot Product)
+- 7.2 시야 판별 (View Frustum Culling)
+    - 7.2.1 앞뒤 판별 (Front/Back Determination)
+    - 7.2.2 시야 판별 (Field of View Determination)
+- 7.3 조명 효과의 구현 (Implementing Lighting Effects)
+- 7.4 투영 벡터 (Projection Vector)
+- 7.5 정리 (Summary)
 
-3부 | 3차원 콘텐츠 제작
-10장 3차원 공간: 입체 공간의 생성
-10.13차원공간의설계
-10.23차원공간의트랜스폼
-__10.2.1오일러각
-__10.2.2회전행렬의유도
-__10.2.33차원모델링행렬
-10.3카메라공간
-10.4오일러각의특징
-__10.4.1짐벌락현상
-__10.4.2회전보간의계산
-10.5정리
+### **8장: 삼각형: 물체를 구성하는 가장 작은 단위 (Chapter 8: Triangles: The Smallest Unit for Constructing Objects)**
+- 8.1 세 점의 결합 (Combination of Three Points)
+- 8.2 메시 (Meshes)
+- 8.3 무게중심 좌표 (Barycentric Coordinates)
+    - 8.3.1 무게중심 좌표의 계산 (Calculating Barycentric Coordinates)
+    - 8.3.2 정점에 설정된 부가 정보의 활용 (Utilizing Additional Information Set at Vertices)
+- 8.4 텍스처 매핑 (Texture Mapping)
+- 8.5 정리 (Summary)
 
-11장 외적: 3차원 공간의 분석과 응용
-11.1벡터의외적
-__11.1.1평행성판별
-__11.1.2법선벡터
-__11.1.3좌우방향판별
-11.2벡터로부터회전행렬생성
-11.3렌더링계산량을줄여주는백페이스컬링
-11.4오일러각의문제를해결하는로드리게스회전공식
-11.5삼중곱
-__11.5.1스칼라삼중곱
-__11.5.2벡터삼중곱
-11.6정리
+### **9장: 게임 엔진: 콘텐츠를 만드는 기술 (Chapter 9: Game Engines: The Technology for Creating Content)**
+- 9.1 게임 엔진의 구성 요소 (Components of a Game Engine)
+    - 9.1.1 씬의 구조 (Structure of a Scene)
+    - 9.1.2 모델링 행렬의 설계 (Designing the Modeling Matrix)
+    - 9.1.3 로컬 공간과 로컬 축 (Local Space and Local Axes)
+    - 9.1.4 리소스 관리 (Resource Management)
+- 9.2 게임 엔진의 워크플로우 (Game Engine Workflow)
+    - 9.2.1 CK 소프트 렌더러의 워크플로우 (Workflow of the CK Soft Renderer)
+    - 9.2.2 렌더링 파이프라인 (Rendering Pipeline)
+- 9.3 카메라 시스템 (Camera System)
+    - 9.3.1 가상 공간의 카메라 (Cameras in Virtual Space)
+- 9.4 정리 (Summary)
 
-12장 원근 투영: 화면에 현실감을 부여하는 변환
-12.1원근투영변환의원리
-12.2동차좌표계
-12.3깊이값
-12.4원근보정매핑
-12.5깊이버퍼
-12.6정리
+---
+## 3부 | 3차원 콘텐츠 제작 (Part 3 | 3D Content Creation)
 
-13장 절두체: 최적화된 3차원 공간
-13.1절두체컬링
-__13.1.1평면의방정식
-__13.1.2평면의방정식의정규화
-__13.1.3평면의방정식을활용한절두체표현
-__13.1.4원근투영행렬로부터평면의방정식만들기
-13.2바운딩볼륨
-__13.2.1구바운딩볼륨의판정
-__13.2.2AABB와의판정
-13.3삼각형클리핑
-13.4정리
+---
 
-4부 | 4차원 수학과 캐릭터
-14장 복소수: 2차원 평면의 수
-14.1복소수
-__14.1.1허수
-__14.1.2복소수의구조
-14.2복소평면
-__14.2.1단위복소수와의곱
-__14.2.1켤레복소수의회전변환
-14.3복소수와행렬의관계
-14.4정리
+### **10장: 3차원 공간: 입체 공간의 생성 (Chapter 10: 3D Space: Creating Volumetric Space)**
+- 10.1 3차원 공간의 설계 (Designing 3D Space)
+- 10.2 3차원 공간의 트랜스폼 (Transforms in 3D Space)
+    - 10.2.1 오일러 각 (Euler Angles)
+    - 10.2.2 회전 행렬의 유도 (Derivation of the Rotation Matrix)
+    - 10.2.3 3차원 모델링 행렬 (3D Modeling Matrix)
+- 10.3 카메라 공간 (Camera Space)
+- 10.4 오일러 각의 특징 (Characteristics of Euler Angles)
+    - 10.4.1 짐벌 락 현상 (Gimbal Lock)
+    - 10.4.2 회전 보간의 계산 (Calculating Rotational Interpolation)
+- 10.5 정리 (Summary)
 
-15장 오일러 공식: 허수로 표현하는 회전 변환
-15.1자연지수함수
-__15.1.1무리수e
-__15.1.2자연지수함수
-15.2미분
-__15.2.1도함수
-__15.2.2자연지수함수의도함수
-__15.2.3sin함수와cos함수의도함수
-15.3급수
-__15.3.1등비수열
-__15.3.2급수
-__15.3.3매클로린급수
-15.4오일러공식
-15.5정리
+### **11장: 외적: 3차원 공간의 분석과 응용 (Chapter 11: Cross Product: Analysis and Application in 3D Space)**
+- 11.1 벡터의 외적 (Cross Product of Vectors)
+    - 11.1.1 평행성 판별 (Determining Parallelism)
+    - 11.1.2 법선 벡터 (Normal Vector)
+    - 11.1.3 좌우 방향 판별 (Determining Left/Right Direction)
+- 11.2 벡터로부터 회전 행렬 생성 (Creating a Rotation Matrix from a Vector)
+- 11.3 렌더링 계산량을 줄여주는 백페이스 컬링 (Back-face Culling to Reduce Rendering Calculations)
+- 11.4 오일러 각의 문제를 해결하는 로드리게스 회전 공식 (Rodrigues' Rotation Formula to Solve Euler Angle Problems)
+- 11.5 삼중곱 (Triple Product)
+    - 11.5.1 스칼라 삼중곱 (Scalar Triple Product)
+    - 11.5.2 벡터 삼중곱 (Vector Triple Product)
+- 11.6 정리 (Summary)
 
-16장 사원수: 4차원 수로 설계한 3차원 회전
-16.1사원수대수
-__16.1.1사원수를구성하는세허수
-__16.1.2사원수의구조
-__16.1.3사원수와벡터
-16.2사원수의회전
-__16.2.1사원수와오일러공식
-__16.2.2회전사원수를이용한3차원공간에서의회전
-16.3사원수의변환
-__16.3.1오일러각에서사원수로의변환
-__16.3.2사원수에서오일러각으로의변환
-__16.3.3사원수에서회전변환행렬로의변환
-__16.3.4회전변환행렬에서사원수로의변환
-16.4사원수의보간
-16.5사원수의활용
-16.6정리
+### **12장: 원근 투영: 화면에 현실감을 부여하는 변환 (Chapter 12: Perspective Projection: A Transformation that Adds Realism to the Screen)**
+- 12.1 원근 투영 변환의 원리 (Principles of Perspective Projection Transformation)
+- 12.2 동차 좌표계 (Homogeneous Coordinates)
+- 12.3 깊이값 (Depth Value)
+- 12.4 원근 보정 매핑 (Perspective-Correct Mapping)
+- 12.5 깊이 버퍼 (Depth Buffer)
+- 12.6 정리 (Summary)
 
-17장 캐릭터: 게임에 생기를 불어넣는 기술
-17.1스켈레탈애니메이션
-17.2트랜스폼계층구조
-__17.2.1트랜스폼계층구조의변환
-__17.2.2로컬트랜스폼으로부터월드트랜스폼의계산
-__17.2.3월드트랜스폼으로부터로컬트랜스폼의계산
-17.3캐릭터메시와애니메이션
-17.4정리
+### **13장: 절두체: 최적화된 3차원 공간 (Chapter 13: Frustum: An Optimized 3D Space)**
+- 13.1 절두체 컬링 (Frustum Culling)
+    - 13.1.1 평면의 방정식 (Equation of a Plane)
+    - 13.1.2 평면의 방정식의 정규화 (Normalization of the Plane Equation)
+    - 13.1.3 평면의 방정식을 활용한 절두체 표현 (Representing the Frustum Using Plane Equations)
+    - 13.1.4 원근 투영 행렬로부터 평면의 방정식 만들기 (Creating Plane Equations from the Perspective Projection Matrix)
+- 13.2 바운딩 볼륨 (Bounding Volumes)
+    - 13.2.1 구 바운딩 볼륨의 판정 (Sphere Bounding Volume Test)
+    - 13.2.2 AABB와의 판정 (AABB Test)
+- 13.3 삼각형 클리핑 (Triangle Clipping)
+- 13.4 정리 (Summary)
 
-#References
-군, 환, 체 (Group, Ring, Field)
-https://wikidocs.net/69315
+---
+## 4부 | 4차원 수학과 캐릭터 (Part 4 | 4D Mathematics and Characters)
+
+---
+
+### **14장: 복소수: 2차원 평면의 수 (Chapter 14: Complex Numbers: Numbers on a 2D Plane)**
+- 14.1 복소수 (Complex Numbers)
+    - 14.1.1 허수 (Imaginary Numbers)
+    - 14.1.2 복소수의 구조 (Structure of Complex Numbers)
+- 14.2 복소평면 (The Complex Plane)
+    - 14.2.1 단위 복소수와의 곱 (Multiplication with a Unit Complex Number)
+    - 14.2.2 켤레 복소수의 회전 변환 (Rotation Transformation of a Conjugate Complex Number)
+- 14.3 복소수와 행렬의 관계 (Relationship between Complex Numbers and Matrices)
+- 14.4 정리 (Summary)
+
+### **15장: 오일러 공식: 허수로 표현하는 회전 변환 (Chapter 15: Euler's Formula: Representing Rotation with Imaginary Numbers)**
+- 15.1 자연지수함수 (The Natural Exponential Function)
+    - 15.1.1 무리수 $e$ (The Irrational Number $e$)
+    - 15.1.2 자연지수함수 (The Natural Exponential Function)
+- 15.2 미분 (Differentiation)
+    - 15.2.1 도함수 (The Derivative)
+    - 15.2.2 자연지수함수의 도함수 (Derivative of the Natural Exponential Function)
+    - 15.2.3 $sin$ 함수와 $cos$ 함수의 도함수 (Derivatives of sin and cos Functions)
+- 15.3 급수 (Series)
+    - 15.3.1 등비수열 (Geometric Sequence)
+    - 15.3.2 급수 (Series)
+    - 15.3.3 매클로린 급수 (Maclaurin Series)
+- 15.4 오일러 공식 (Euler's Formula)
+- 15.5 정리 (Summary)
+
+### **16장: 사원수: 4차원 수로 설계한 3차원 회전 (Chapter 16: Quaternions: 3D Rotation Designed with 4D Numbers)**
+- 16.1 사원수 대수 (Quaternion Algebra)
+    - 16.1.1 사원수를 구성하는 세 허수 (The Three Imaginary Units of a Quaternion)
+    - 16.1.2 사원수의 구조 (Structure of Quaternions)
+    - 16.1.3 사원수와 벡터 (Quaternions and Vectors)
+- 16.2 사원수의 회전 (Quaternion Rotation)
+    - 16.2.1 사원수와 오일러 공식 (Quaternions and Euler's Formula)
+    - 16.2.2 회전 사원수를 이용한 3차원 공간에서의 회전 (Rotation in 3D Space Using a Rotation Quaternion)
+- 16.3 사원수의 변환 (Quaternion Conversion)
+    - 16.3.1 오일러 각에서 사원수로의 변환 (Conversion from Euler Angles to Quaternions)
+    - 16.3.2 사원수에서 오일러 각으로의 변환 (Conversion from Quaternions to Euler Angles)
+    - 16.3.3 사원수에서 회전 변환 행렬로의 변환 (Conversion from Quaternions to a Rotation Matrix)
+    - 16.3.4 회전 변환 행렬에서 사원수로의 변환 (Conversion from a Rotation Matrix to Quaternions)
+- 16.4 사원수의 보간 (Quaternion Interpolation)
+- 16.5 사원수의 활용 (Application of Quaternions)
+- 16.6 정리 (Summary)
+
+### **17장: 캐릭터: 게임에 생기를 불어넣는 기술 (Chapter 17: Characters: The Technology that Breathes Life into Games)**
+- 17.1 스켈레탈 애니메이션 (Skeletal Animation)
+- 17.2 트랜스폼 계층 구조 (Transform Hierarchy)
+    - 17.2.1 트랜스폼 계층 구조의 변환 (Transformation in a Transform Hierarchy)
+    - 17.2.2 로컬 트랜스폼으로부터 월드 트랜스폼의 계산 (Calculating World Transform from Local Transform)
+    - 17.2.3 월드 트랜스폼으로부터 로컬 트랜스폼의 계산 (Calculating Local Transform from World Transform)
+- 17.3 캐릭터 메시와 애니메이션 (Character Mesh and Animation)
+- 17.4 정리 (Summary)
+
+---
+## 📚 References
+
+- **DX12 Reference Videos**: `https://www.youtube.com/playlist?list=PL-m4pn2uJvXF30Vu2DNK1mKH2EJxOc_jU`
+- **군, 환, 체 (Group, Ring, Field)**: `https://wikidocs.net/69315`
