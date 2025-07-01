@@ -1,4 +1,10 @@
 # WN_GraphicsStudy
+---
+## 📚 References
+
+- **DX12 Reference Videos**: https://www.youtube.com/playlist?list=PL-m4pn2uJvXF30Vu2DNK1mKH2EJxOc_jU
+- **군, 환, 체 (Group, Ring, Field)**: https://wikidocs.net/69315
+---
 
 # 🎮 이득우의 게임수학
 
@@ -222,9 +228,3 @@
     - 17.2.3 월드 트랜스폼으로부터 로컬 트랜스폼의 계산 (Calculating Local Transform from World Transform)
 - 17.3 캐릭터 메시와 애니메이션 (Character Mesh and Animation)
 - 17.4 정리 (Summary)
-
----
-## 📚 References
-
-- **DX12 Reference Videos**: https://www.youtube.com/playlist?list=PL-m4pn2uJvXF30Vu2DNK1mKH2EJxOc_jU
-- **군, 환, 체 (Group, Ring, Field)**: https://wikidocs.net/69315
