@@ -4,6 +4,7 @@
 
 - **DX12 Reference Videos**: https://www.youtube.com/playlist?list=PL-m4pn2uJvXF30Vu2DNK1mKH2EJxOc_jU
 - **군, 환, 체 (Group, Ring, Field)**: https://wikidocs.net/69315
+- **Rendering Study**: https://wikidocs.net/book/18016
 ---
 
 # 🎮 이득우의 게임수학
