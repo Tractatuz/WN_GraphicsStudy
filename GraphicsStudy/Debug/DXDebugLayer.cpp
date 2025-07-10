@@ -31,7 +31,7 @@ void DXDebugLayer::ShutDown()
 		);
 	}
 
-	m_dxgiDebug->Release();
-	m_d3d12Debug->Release();
+	m_dxgiDebug.Release();
+	m_d3d12Debug.Release();
 #endif
 }
