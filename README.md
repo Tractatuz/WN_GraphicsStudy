@@ -9,6 +9,8 @@
 
 # 🎮 이득우의 게임수학
 
+- **GitHub Repo**: https://github.com/onlybooks/gamemath
+
 ## 1부 | 가상 세계의 구축 (Part 1 | Building the Virtual World)
 
 ---
