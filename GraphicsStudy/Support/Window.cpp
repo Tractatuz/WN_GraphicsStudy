@@ -23,11 +23,45 @@ bool DXWindow::Init()
         return false;
     }
 
-    return true;
+    // Place window on current screen
+    POINT pos{ 0,0 };
+    GetCursorPos(&pos);
+    HMONITOR monitor = MonitorFromPoint(pos, MONITOR_DEFAULTTOPRIMARY);
+    MONITORINFO monitorInfo {};
+    monitorInfo.cbSize = sizeof(monitorInfo);
+    GetMonitorInfoW(monitor, &monitorInfo);
+
+    //Window
+    m_window = CreateWindowExW(
+        WS_EX_OVERLAPPEDWINDOW | WS_EX_APPWINDOW,
+        (LPCWSTR)m_wndClass, L"D3D12GraphicsStudy",
+        WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+        monitorInfo.rcWork.left + 100,
+        monitorInfo.rcWork.top + 100, 
+        1920, 1080, 
+        nullptr, nullptr, wcex.hInstance, nullptr);
+
+    return (m_window != nullptr);
+}
+
+void DXWindow::Update()
+{
+    MSG msg;
+    while (PeekMessageW(&msg, m_window, 0, 0, PM_NOREMOVE))
+    {
+        TranslateMessage(&msg);
+        DispatchMessageW(&msg);
+
+    }
 }
 
 void DXWindow::ShutDown()
 {
+    if (m_window)
+    {
+        DestroyWindow(m_window);
+    }
+
     if (m_wndClass)
     {
         UnregisterClassW((LPCWSTR)m_wndClass, GetModuleHandleW(nullptr));
@@ -38,6 +72,9 @@ LRESULT DXWindow::OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lPar
 {
     switch (msg)
     {
+    case WM_CLOSE:
+        Get().m_shouldClose = true;
+        return 0;
 
     }
 

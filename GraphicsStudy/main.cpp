@@ -13,8 +13,9 @@ int main()
 
 	if (DXContext::Get().Init() && DXWindow::Get().Init())
 	{
-		while (true)
+		while (DXWindow::Get().ShouldClose() == false)
 		{
+			DXWindow::Get().Update();
 			auto* cmdList = DXContext::Get().InitCommandList();
 			
 			// a lot of setup
@@ -26,6 +27,7 @@ int main()
 			// Show me the stuff
 		}
 
+		DXWindow::Get().ShutDown();
 		DXContext::Get().ShutDown();
 	}
 	

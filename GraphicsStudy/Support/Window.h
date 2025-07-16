@@ -7,14 +7,21 @@ class DXWindow
 {
 public:
 	bool Init();
+	void Update();
 	void ShutDown();
+
+	inline bool ShouldClose() const
+	{
+		return m_shouldClose;
+	}
 
 private:
 	static LRESULT CALLBACK OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 private:
 	ATOM m_wndClass = 0;
-
+	HWND m_window = nullptr;
+	bool m_shouldClose = false;
 
 // Singleton
 public:
