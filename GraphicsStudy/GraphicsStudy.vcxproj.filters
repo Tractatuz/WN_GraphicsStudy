@@ -20,4 +20,7 @@
     <ClInclude Include="D3D\DXContext.h" />
     <ClInclude Include="Support\Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
