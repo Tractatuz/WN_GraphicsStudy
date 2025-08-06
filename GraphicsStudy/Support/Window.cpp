@@ -38,7 +38,7 @@ bool DXWindow::Init()
         WS_OVERLAPPEDWINDOW | WS_VISIBLE,
         monitorInfo.rcWork.left + 100,
         monitorInfo.rcWork.top + 100, 
-        1280, 720, 
+        m_width, m_height,
         nullptr, nullptr, wcex.hInstance, nullptr);
 
     if (m_window == nullptr)
@@ -50,8 +50,8 @@ bool DXWindow::Init()
     DXGI_SWAP_CHAIN_DESC1 swd{};
     DXGI_SWAP_CHAIN_FULLSCREEN_DESC sfd{};
 
-    swd.Width = 1280;
-    swd.Height = 720;
+    swd.Width = m_width;
+    swd.Height = m_height;
     swd.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
     swd.Stereo = false;
     swd.SampleDesc.Count = 1; // Multi Sample Anti-Aliasing 1 pixel per pixel 
@@ -108,14 +108,32 @@ void DXWindow::ShutDown()
     }
 }
 
+void DXWindow::Resize()
+{
+    RECT cr;
+    if (GetClientRect(m_window, &cr))
+    {
+        m_width = cr.right - cr.left;
+        m_height = cr.bottom - cr.top;
+
+        m_swapChain->ResizeBuffers(GetFrameCount(), m_width, m_height, DXGI_FORMAT_UNKNOWN, DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH | DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING);
+        m_shouldResize = false;
+    }
+}
 LRESULT DXWindow::OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg)
     {
-    case WM_CLOSE:
-        Get().m_shouldClose = true;
-        return 0;
+        case WM_SIZE:
+            if (lParam && (HIWORD(lParam) != Get().m_height || LOWORD(lParam) != Get().m_width))
+            {
+                Get().m_shouldResize = true;
+            }
+            break;
 
+        case WM_CLOSE:
+            Get().m_shouldClose = true;
+            return 0;
     }
 
     return DefWindowProcW(wnd, msg, wParam, lParam);

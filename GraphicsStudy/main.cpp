@@ -26,7 +26,15 @@ int main()
 	{
 		while (DXWindow::Get().ShouldClose() == false)
 		{
+			// process pending window message
 			DXWindow::Get().Update();
+
+			// handle resizing
+			if (DXWindow::Get().ShouldResize())
+			{
+				DXContext::Get().Flush(DXWindow::GetFrameCount());
+				DXWindow::Get().Resize();
+			}
 			auto* cmdList = DXContext::Get().InitCommandList();
 			
 			// a lot of setup

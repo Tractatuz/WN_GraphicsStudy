@@ -11,10 +11,26 @@ public:
 	void Update();
 	void Present();
 	void ShutDown();
+	void Resize();
 
 	inline bool ShouldClose() const
 	{
 		return m_shouldClose;
+	}
+
+	inline bool ShouldResize() const
+	{
+		return m_shouldResize;
+	}
+
+	inline UINT GetWidth() const
+	{
+		return m_width;
+	}
+
+	inline UINT GetHeight() const
+	{
+		return m_height;
 	}
 
 	static constexpr size_t GetFrameCount()
@@ -29,6 +45,10 @@ private:
 	ATOM m_wndClass = 0;
 	HWND m_window = nullptr;
 	bool m_shouldClose = false;
+
+	bool m_shouldResize = false;
+	UINT m_width = 1280;
+	UINT m_height = 720;
 
 	ComPointer<IDXGISwapChain4> m_swapChain;
 
