@@ -34,9 +34,12 @@ int main()
 			//cmdList->DrawInstanced(3, 3, 3, 3);
 
 			DXContext::Get().ExecuteCommandList();
-
 			// Show me the stuff
+			DXWindow::Get().Present();
 		}
+
+		// Flushing
+		DXContext::Get().Flush(DXWindow::GetFrameCount());
 
 		DXWindow::Get().ShutDown();
 		DXContext::Get().ShutDown();

@@ -13,6 +13,19 @@ public:
 	ID3D12GraphicsCommandList7* InitCommandList();
 	void ExecuteCommandList();
 
+	inline void Flush(size_t count)
+	{
+		for (size_t i = 0; i < count; i++)
+		{
+			SignalAndWait();
+		}
+	}
+
+	inline ComPointer<IDXGIFactory7>& GetFactory()
+	{
+		return m_dxgiFactory;
+	}
+
 	inline ComPointer<ID3D12Device10>& GetDevice()
 	{
 		return m_device;
@@ -24,6 +37,8 @@ public:
 	}
 
 private:
+	ComPointer<IDXGIFactory7> m_dxgiFactory;
+
 	ComPointer<ID3D12Device10> m_device;
 	ComPointer<ID3D12CommandQueue> m_cmdQueue;
 

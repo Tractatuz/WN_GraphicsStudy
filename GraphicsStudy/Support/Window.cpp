@@ -38,16 +38,49 @@ bool DXWindow::Init()
         WS_OVERLAPPEDWINDOW | WS_VISIBLE,
         monitorInfo.rcWork.left + 100,
         monitorInfo.rcWork.top + 100, 
-        1920, 1080, 
+        1280, 720, 
         nullptr, nullptr, wcex.hInstance, nullptr);
 
-    return (m_window != nullptr);
+    if (m_window == nullptr)
+    {
+        return false;
+    }
+
+    // Desc swap chain
+    DXGI_SWAP_CHAIN_DESC1 swd{};
+    DXGI_SWAP_CHAIN_FULLSCREEN_DESC sfd{};
+
+    swd.Width = 1280;
+    swd.Height = 720;
+    swd.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    swd.Stereo = false;
+    swd.SampleDesc.Count = 1; // Multi Sample Anti-Aliasing 1 pixel per pixel 
+    swd.SampleDesc.Quality = 0; // No Multi Sample Anti-Aliasing
+    swd.BufferUsage = DXGI_USAGE_BACK_BUFFER | DXGI_USAGE_RENDER_TARGET_OUTPUT;
+    swd.BufferCount = 2;
+    swd.Scaling = DXGI_SCALING_STRETCH;
+    swd.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
+    swd.AlphaMode = DXGI_ALPHA_MODE_IGNORE;
+    swd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH | DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING;
+
+    sfd.Windowed = true;
+
+    // SwapChain
+    auto& factory = DXContext::Get().GetFactory();
+    ComPointer<IDXGISwapChain1> sc1;
+    factory->CreateSwapChainForHwnd(DXContext::Get().GetCommandQueue(), m_window, &swd, &sfd, nullptr, &sc1);
+    if (!sc1.QueryInterface(m_swapChain))
+    {
+        return false;
+    }
+
+    return true;
 }
 
 void DXWindow::Update()
 {
     MSG msg;
-    while (PeekMessageW(&msg, m_window, 0, 0, PM_NOREMOVE))
+    while (PeekMessageW(&msg, m_window, 0, 0, PM_REMOVE))
     {
         TranslateMessage(&msg);
         DispatchMessageW(&msg);
@@ -55,8 +88,15 @@ void DXWindow::Update()
     }
 }
 
+void DXWindow::Present()
+{
+    m_swapChain->Present(1, 0);
+}
+
 void DXWindow::ShutDown()
 {
+    m_swapChain.Release();
+
     if (m_window)
     {
         DestroyWindow(m_window);
