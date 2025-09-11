@@ -1,9 +1,8 @@
 #pragma once
 
-#include "Platform/Public/IPlatformWindow.h"
-#include "Renderer/Public/IRenderDevice.h"
-#include "Renderer/Public/ISwapChain.h"
-#include "Renderer/Public/ICommandQueue.h"
+#include "Core/Common.h"
+#include "Platform/IPlatformWindow.h"
+#include "Renderer/IRenderer.h"
 
 class Application
 {
@@ -15,11 +14,8 @@ public:
 	void Shutdown();
 
 private:
-	IPlatformWindow* m_platformWindow;
-	IRenderDevice* m_renderDevice;
-	ISwapChain* m_swapChain;
-
-	//...
+	std::unique_ptr<IPlatformWindow> m_platformWindow;
+	std::unique_ptr<IRenderer> m_renderer;
 
 	// Singleton
 public:

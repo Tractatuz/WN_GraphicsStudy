@@ -15,7 +15,7 @@ bool D3D12Device::Init()
 	return true;
 }
 
-void D3D12Device::ShutDown()
+void D3D12Device::Shutdown()
 {
 	m_device.Release();
 	m_dxgiFactory.Release();

@@ -20,7 +20,7 @@ bool D3D12DebugLayer::Init()
     return false;
 }
 
-void D3D12DebugLayer::ShutDown()
+void D3D12DebugLayer::Shutdown()
 {
 #ifdef _DEBUG
 	if (m_dxgiDebug)

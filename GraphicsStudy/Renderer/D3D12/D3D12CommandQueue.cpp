@@ -30,7 +30,7 @@ bool D3D12CommandQueue::Init()
 	return true;
 }
 
-void D3D12CommandQueue::ShutDown()
+void D3D12CommandQueue::Shutdown()
 {
 	if (m_fenceEvent)
 	{

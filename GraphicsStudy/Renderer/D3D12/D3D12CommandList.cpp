@@ -17,7 +17,7 @@ bool D3D12CommandList::Init()
 	return true;
 }
 
-void D3D12CommandList::ShutDown()
+void D3D12CommandList::Shutdown()
 {
 	m_cmdList.Release();
 	m_cmdAllocator.Release();

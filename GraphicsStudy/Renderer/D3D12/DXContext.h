@@ -7,7 +7,7 @@
 //{
 //public:
 //	bool Init();
-//	void ShutDown();
+//	void Shutdown();
 //
 //	void SignalAndWait();
 //	ID3D12GraphicsCommandList7* InitCommandList();

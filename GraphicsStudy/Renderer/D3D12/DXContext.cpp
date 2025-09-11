@@ -49,7 +49,7 @@
 //	return true;
 //}
 //
-//void DXContext::ShutDown()
+//void DXContext::Shutdown()
 //{
 //	m_cmdList.Release();
 //	m_cmdAllocator.Release();

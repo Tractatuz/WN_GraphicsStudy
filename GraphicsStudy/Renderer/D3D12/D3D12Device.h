@@ -1,15 +1,14 @@
 #pragma once
 
 #include "D3D12Include.h"
-#include "Renderer/Public/IRenderDevice.h"
-#include "Support/ComPointer.h"
+#include "Core/ComPointer.h"
 
-class D3D12Device : IRenderDevice
+class D3D12Device
 {
 public:
-	virtual bool Init() override;
-	virtual void ShutDown() override;
-	virtual void Flush() override;
+	bool Init();
+	void Shutdown();
+	void Flush();
 
 	inline ComPointer<IDXGIFactory7>& GetFactory()
 	{

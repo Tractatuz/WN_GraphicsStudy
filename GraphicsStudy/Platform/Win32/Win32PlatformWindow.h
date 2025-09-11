@@ -1,18 +1,17 @@
 #pragma once
 
-#include "WinInclude.h"
-#include "Platform/Public/IPlatformWindow.h"
-#include "Renderer/Public/ISwapChain.h"
+#include "Win32Include.h"
+#include "Platform/IPlatformWindow.h"
 
-class Win32PlatformWindow : IPlatformWindow
+class Win32PlatformWindow : public IPlatformWindow
 {
 public:
 	virtual bool Init() override;
-	void Update();
-	virtual void ShutDown() override;
-	void Resize();
+	virtual void Update() override;
+	virtual void Shutdown() override;
+	virtual void Resize() override;
 
-	virtual  bool ShouldClose() const override
+	virtual bool ShouldClose() const override
 	{
 		return m_shouldClose;
 	}
@@ -48,19 +47,4 @@ private:
 	bool m_shouldResize = false;
 	UINT m_width = 1280;
 	UINT m_height = 720;
-
-// Singleton
-public:
-	Win32PlatformWindow(const Win32PlatformWindow&) = delete;
-	Win32PlatformWindow& operator = (const Win32PlatformWindow&) = delete;
-
-	inline static Win32PlatformWindow& Get()
-	{
-		static Win32PlatformWindow instance;
-		return instance;
-	}
-
-private:
-	Win32PlatformWindow() = default;
-
 };

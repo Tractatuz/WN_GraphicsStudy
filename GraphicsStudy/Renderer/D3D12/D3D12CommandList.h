@@ -1,14 +1,13 @@
 #pragma once
 
 #include "D3D12Include.h"
-#include "Renderer/Public/ICommandList.h"
-#include "Support/ComPointer.h"
+#include "Core/ComPointer.h"
 
-class D3D12CommandList : ICommandList
+class D3D12CommandList
 {
 public:
 	bool Init();
-	void ShutDown();
+	void Shutdown();
 
 	ID3D12GraphicsCommandList7* InitCommandList();
 	void ExecuteCommandList();

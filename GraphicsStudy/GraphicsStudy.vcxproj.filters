@@ -2,14 +2,17 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Application\main.cpp" />
-    <ClCompile Include="Renderer\RHI\D3D12\D3D12DebugLayer.cpp" />
-    <ClCompile Include="Renderer\RHI\D3D12\DXContext.cpp" />
+    <ClCompile Include="Renderer\D3D12\D3D12DebugLayer.cpp" />
+    <ClCompile Include="Renderer\D3D12\DXContext.cpp" />
     <ClCompile Include="Platform\Win32\Win32PlatformWindow.cpp" />
-    <ClCompile Include="Renderer\RHI\D3D12\D3D12Device.cpp" />
+    <ClCompile Include="Renderer\D3D12\D3D12Device.cpp" />
     <ClCompile Include="Application\D3D12Agility.cpp" />
     <ClCompile Include="Application\Application.cpp" />
-    <ClCompile Include="Renderer\RHI\D3D12\D3D12CommandList.cpp" />
-    <ClCompile Include="Renderer\RHI\D3D12\D3D12CommandQueue.cpp" />
+    <ClCompile Include="Renderer\D3D12\D3D12CommandList.cpp" />
+    <ClCompile Include="Renderer\D3D12\D3D12CommandQueue.cpp" />
+    <ClCompile Include="Renderer\D3D12\D3D12Renderer.cpp" />
+    <ClCompile Include="Renderer\IRenderer.cpp" />
+    <ClCompile Include="Platform\IPlatformWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Support">
@@ -17,23 +20,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Platform\Win32\WinInclude.h">
+    <ClInclude Include="Platform\Win32\Win32Include.h">
       <Filter>Support</Filter>
     </ClInclude>
-    <ClInclude Include="Support\ComPointer.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\D3D12DebugLayer.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\DXContext.h" />
+    <ClInclude Include="Core\ComPointer.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12DebugLayer.h" />
+    <ClInclude Include="Renderer\D3D12\DXContext.h" />
     <ClInclude Include="Platform\Win32\Win32PlatformWindow.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\D3D12Device.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12Device.h" />
     <ClInclude Include="Application\Application.h" />
-    <ClInclude Include="Platform\Public\IPlatformWindow.h" />
-    <ClInclude Include="Renderer\Public\IRenderDevice.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\D3D12Include.h" />
-    <ClInclude Include="Renderer\Public\ICommandQueue.h" />
-    <ClInclude Include="Renderer\Public\ICommandList.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\D3D12CommandQueue.h" />
-    <ClInclude Include="Renderer\RHI\D3D12\D3D12CommandList.h" />
-    <ClInclude Include="Renderer\Public\ISwapChain.h" />
+    <ClInclude Include="Platform\IPlatformWindow.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12Include.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12CommandQueue.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12CommandList.h" />
+    <ClInclude Include="Renderer\IRenderer.h" />
+    <ClInclude Include="Renderer\D3D12\D3D12Renderer.h" />
+    <ClInclude Include="Core\Common.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

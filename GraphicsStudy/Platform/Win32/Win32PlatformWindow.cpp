@@ -89,7 +89,7 @@ void Win32PlatformWindow::Update()
     }
 }
 
-void Win32PlatformWindow::ShutDown()
+void Win32PlatformWindow::Shutdown()
 {
     if (m_window)
     {

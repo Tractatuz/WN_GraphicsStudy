@@ -1,14 +1,13 @@
 #pragma once
 
 #include "D3D12Include.h"
-#include "Renderer/Public/ICommandQueue.h"
-#include "Support/ComPointer.h"
+#include "Core/ComPointer.h"
 
-class D3D12CommandQueue : ICommandQueue
+class D3D12CommandQueue
 {
 public:
 	bool Init();
-	void ShutDown();
+	void Shutdown();
 
 	void SignalAndWait();
 	ID3D12GraphicsCommandList7* InitCommandList();

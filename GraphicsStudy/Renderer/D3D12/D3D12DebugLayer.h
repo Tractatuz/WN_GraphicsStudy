@@ -7,7 +7,7 @@ class D3D12DebugLayer
 {
 public:
 	bool Init();
-	void ShutDown();
+	void Shutdown();
 
 private:
 #ifdef _DEBUG
