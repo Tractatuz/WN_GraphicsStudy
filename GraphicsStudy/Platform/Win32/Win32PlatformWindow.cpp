@@ -1,12 +1,12 @@
-#include "Window.h"
+#include "Win32PlatformWindow.h"
 
-bool DXWindow::Init()
+bool Win32PlatformWindow::Init()
 {
     // Window class
     WNDCLASSEXW wcex{};
     wcex.cbSize = sizeof(wcex);
     wcex.style = CS_OWNDC;
-    wcex.lpfnWndProc = &DXWindow::OnWindowMessage;
+    wcex.lpfnWndProc = &Win32PlatformWindow::OnWindowMessage;
     wcex.cbClsExtra = 0;
     wcex.cbWndExtra = 0;
     wcex.hInstance = GetModuleHandleW(nullptr);
@@ -46,6 +46,7 @@ bool DXWindow::Init()
         return false;
     }
 
+    /*
     // Desc swap chain
     DXGI_SWAP_CHAIN_DESC1 swd{};
     DXGI_SWAP_CHAIN_FULLSCREEN_DESC sfd{};
@@ -73,30 +74,23 @@ bool DXWindow::Init()
     {
         return false;
     }
+    */
 
     return true;
 }
 
-void DXWindow::Update()
+void Win32PlatformWindow::Update()
 {
     MSG msg;
     while (PeekMessageW(&msg, m_window, 0, 0, PM_REMOVE))
     {
         TranslateMessage(&msg);
         DispatchMessageW(&msg);
-
     }
 }
 
-void DXWindow::Present()
+void Win32PlatformWindow::ShutDown()
 {
-    m_swapChain->Present(1, 0);
-}
-
-void DXWindow::ShutDown()
-{
-    m_swapChain.Release();
-
     if (m_window)
     {
         DestroyWindow(m_window);
@@ -108,7 +102,7 @@ void DXWindow::ShutDown()
     }
 }
 
-void DXWindow::Resize()
+void Win32PlatformWindow::Resize()
 {
     RECT cr;
     if (GetClientRect(m_window, &cr))
@@ -116,11 +110,11 @@ void DXWindow::Resize()
         m_width = cr.right - cr.left;
         m_height = cr.bottom - cr.top;
 
-        m_swapChain->ResizeBuffers(GetFrameCount(), m_width, m_height, DXGI_FORMAT_UNKNOWN, DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH | DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING);
+        //m_swapChain->ResizeBuffers(GetFrameCount(), m_width, m_height, DXGI_FORMAT_UNKNOWN, DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH | DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING);
         m_shouldResize = false;
     }
 }
-LRESULT DXWindow::OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT Win32PlatformWindow::OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg)
     {

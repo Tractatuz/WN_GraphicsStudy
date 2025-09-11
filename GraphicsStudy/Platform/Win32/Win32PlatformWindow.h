@@ -1,19 +1,18 @@
 #pragma once
 
-#include <Support/WinInclude.h>
-#include <Support/ComPointer.h>
-#include <D3D/DXContext.h>
+#include "WinInclude.h"
+#include "Platform/Public/IPlatformWindow.h"
+#include "Renderer/Public/ISwapChain.h"
 
-class DXWindow
+class Win32PlatformWindow : IPlatformWindow
 {
 public:
-	bool Init();
+	virtual bool Init() override;
 	void Update();
-	void Present();
-	void ShutDown();
+	virtual void ShutDown() override;
 	void Resize();
 
-	inline bool ShouldClose() const
+	virtual  bool ShouldClose() const override
 	{
 		return m_shouldClose;
 	}
@@ -23,12 +22,12 @@ public:
 		return m_shouldResize;
 	}
 
-	inline UINT GetWidth() const
+	inline int GetWidth() const
 	{
 		return m_width;
 	}
 
-	inline UINT GetHeight() const
+	inline int GetHeight() const
 	{
 		return m_height;
 	}
@@ -50,20 +49,18 @@ private:
 	UINT m_width = 1280;
 	UINT m_height = 720;
 
-	ComPointer<IDXGISwapChain4> m_swapChain;
-
 // Singleton
 public:
-	DXWindow(const DXWindow&) = delete;
-	DXWindow& operator = (const DXWindow&) = delete;
+	Win32PlatformWindow(const Win32PlatformWindow&) = delete;
+	Win32PlatformWindow& operator = (const Win32PlatformWindow&) = delete;
 
-	inline static DXWindow& Get()
+	inline static Win32PlatformWindow& Get()
 	{
-		static DXWindow instance;
+		static Win32PlatformWindow instance;
 		return instance;
 	}
 
 private:
-	DXWindow() = default;
+	Win32PlatformWindow() = default;
 
 };

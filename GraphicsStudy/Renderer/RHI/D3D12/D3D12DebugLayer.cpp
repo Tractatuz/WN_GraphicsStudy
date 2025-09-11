@@ -1,6 +1,6 @@
-#include "DXDebugLayer.h"
+#include "D3D12DebugLayer.h"
 
-bool DXDebugLayer::Init()
+bool D3D12DebugLayer::Init()
 {
 #ifdef _DEBUG
 	// Init D3D12 Debug Layer
@@ -20,7 +20,7 @@ bool DXDebugLayer::Init()
     return false;
 }
 
-void DXDebugLayer::ShutDown()
+void D3D12DebugLayer::ShutDown()
 {
 #ifdef _DEBUG
 	if (m_dxgiDebug)

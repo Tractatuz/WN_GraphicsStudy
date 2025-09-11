@@ -152,17 +152,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="D3D\DXContext.cpp" />
-    <ClCompile Include="Debug\DXDebugLayer.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Support\Window.cpp" />
+    <ClCompile Include="Application\Application.cpp" />
+    <ClCompile Include="Application\D3D12Agility.cpp" />
+    <ClCompile Include="Renderer\RHI\D3D12\D3D12CommandList.cpp" />
+    <ClCompile Include="Renderer\RHI\D3D12\D3D12CommandQueue.cpp" />
+    <ClCompile Include="Renderer\RHI\D3D12\D3D12Device.cpp" />
+    <ClCompile Include="Renderer\RHI\D3D12\DXContext.cpp" />
+    <ClCompile Include="Renderer\RHI\D3D12\D3D12DebugLayer.cpp" />
+    <ClCompile Include="Application\main.cpp" />
+    <ClCompile Include="Platform\Win32\Win32PlatformWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D3D\DXContext.h" />
-    <ClInclude Include="Debug\DXDebugLayer.h" />
+    <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Platform\Public\IPlatformWindow.h" />
+    <ClInclude Include="Renderer\Public\ICommandList.h" />
+    <ClInclude Include="Renderer\Public\ICommandQueue.h" />
+    <ClInclude Include="Renderer\Public\IRenderDevice.h" />
+    <ClInclude Include="Renderer\Public\ISwapChain.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\D3D12CommandList.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\D3D12CommandQueue.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\D3D12Device.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\D3D12Include.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\DXContext.h" />
+    <ClInclude Include="Renderer\RHI\D3D12\D3D12DebugLayer.h" />
     <ClInclude Include="Support\ComPointer.h" />
-    <ClInclude Include="Support\Window.h" />
-    <ClInclude Include="Support\WinInclude.h" />
+    <ClInclude Include="Platform\Win32\Win32PlatformWindow.h" />
+    <ClInclude Include="Platform\Win32\WinInclude.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
