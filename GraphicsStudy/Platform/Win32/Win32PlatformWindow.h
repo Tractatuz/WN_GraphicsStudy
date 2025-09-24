@@ -16,17 +16,17 @@ public:
 		return m_shouldClose;
 	}
 
-	inline bool ShouldResize() const
+	virtual bool ShouldResize() const override
 	{
 		return m_shouldResize;
 	}
 
-	inline int GetWidth() const
+	virtual uint32_t GetWidth() const override
 	{
 		return m_width;
 	}
 
-	inline int GetHeight() const
+	virtual uint32_t GetHeight() const override
 	{
 		return m_height;
 	}
@@ -38,6 +38,9 @@ public:
 
 private:
 	static LRESULT CALLBACK OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	
+	LRESULT OnWindowMessage(UINT msg, WPARAM wParam, LPARAM lParam);
+	void ShowErrorMessage(DWORD errorCode);
 
 private:
 	ATOM m_wndClass = 0;

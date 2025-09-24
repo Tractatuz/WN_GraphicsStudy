@@ -1,7 +1,7 @@
 #pragma once
 
 #include "D3D12Include.h"
-#include "Support/ComPointer.h"
+#include "Core/ComPointer.h"
 
 class D3D12DebugLayer
 {

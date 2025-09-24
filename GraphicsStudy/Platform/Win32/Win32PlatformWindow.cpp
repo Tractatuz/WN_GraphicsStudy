@@ -34,15 +34,18 @@ bool Win32PlatformWindow::Init()
     //Window
     m_window = CreateWindowExW(
         WS_EX_OVERLAPPEDWINDOW | WS_EX_APPWINDOW,
-        (LPCWSTR)m_wndClass, L"D3D12GraphicsStudy",
+        wcex.lpszClassName, 
+        L"D3D12GraphicsStudy",
         WS_OVERLAPPEDWINDOW | WS_VISIBLE,
         monitorInfo.rcWork.left + 100,
         monitorInfo.rcWork.top + 100, 
         m_width, m_height,
-        nullptr, nullptr, wcex.hInstance, nullptr);
+        nullptr, nullptr, wcex.hInstance, this);
 
     if (m_window == nullptr)
     {
+        DWORD errorCode = GetLastError();
+        ShowErrorMessage(errorCode);
         return false;
     }
 
@@ -114,21 +117,85 @@ void Win32PlatformWindow::Resize()
         m_shouldResize = false;
     }
 }
+
+LRESULT Win32PlatformWindow::OnWindowMessage(UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	switch (msg)
+	{
+	case WM_SIZE:
+        {
+		    if (lParam && (HIWORD(lParam) != m_height || LOWORD(lParam) != m_width))
+		    {
+			    m_shouldResize = true;
+		    }
+        }
+		break;
+
+	case WM_CLOSE:
+        {
+		    m_shouldClose = true;
+        }
+		return 0;
+	}
+
+	return DefWindowProcW(m_window, msg, wParam, lParam);
+}
+
 LRESULT Win32PlatformWindow::OnWindowMessage(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-    switch (msg)
-    {
-        case WM_SIZE:
-            if (lParam && (HIWORD(lParam) != Get().m_height || LOWORD(lParam) != Get().m_width))
-            {
-                Get().m_shouldResize = true;
-            }
-            break;
+	Win32PlatformWindow* pThis = nullptr;
 
-        case WM_CLOSE:
-            Get().m_shouldClose = true;
-            return 0;
-    }
+	if (msg == WM_NCCREATE)
+	{
+        // Get 'this' pointer passed from CreateWindowExW and store it in GWLP_USERDATA.
+		CREATESTRUCT* pCreate = (CREATESTRUCT*)lParam;
+		pThis = (Win32PlatformWindow*)pCreate->lpCreateParams;
+		SetWindowLongPtr(wnd, GWLP_USERDATA, (LONG_PTR)pThis);
 
-    return DefWindowProcW(wnd, msg, wParam, lParam);
+        if (pThis != nullptr)
+        {
+			pThis->m_window = wnd;
+        }
+	}
+	else
+	{
+        // Get the stored 'this' pointer.
+		pThis = (Win32PlatformWindow*)GetWindowLongPtr(wnd, GWLP_USERDATA);
+	}
+
+	if (pThis != nullptr)
+	{
+        // If the pointer is valid, call the actual message handler.
+		return pThis->OnWindowMessage(msg, wParam, lParam);
+	}
+
+    // Before get 'this' pointer, Process messages using the default handler.
+	return DefWindowProcW(wnd, msg, wParam, lParam);
+}
+
+void Win32PlatformWindow::ShowErrorMessage(DWORD errorCode)
+{
+	LPWSTR lpMsgBuf = nullptr;
+
+	FormatMessageW(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER | 
+		FORMAT_MESSAGE_FROM_SYSTEM |     
+		FORMAT_MESSAGE_IGNORE_INSERTS,
+		nullptr,
+		errorCode,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), 
+		(LPWSTR)&lpMsgBuf, 
+		0,
+		nullptr);
+
+	if (lpMsgBuf != nullptr)
+	{
+		MessageBoxW(nullptr, lpMsgBuf, L"Error", MB_ICONERROR);
+
+		LocalFree(lpMsgBuf);
+	}
+	else
+	{
+		wprintf(L"Failed to find Error Message. ErrorCode: %lu\n", errorCode);
+	}
 }
